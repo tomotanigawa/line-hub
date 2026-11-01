@@ -1,0 +1,15 @@
+name = "line-hub"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+[vars]
+# 登録していないグループ・Botへの手動転送の行き先（SlackのチャンネルID）
+SLACK_INBOX_CHANNEL = "C0XXXXXXXXX"
+# LINEグループID → 名前・転送先チャンネル。グループを足したらここに1行足して deploy
+GROUPS = '''
+{
+}
+'''
+
+# 秘密の値は wrangler secret put で入れる（このファイルには書かない）
+# LINE_CHANNEL_SECRET / LINE_CHANNEL_ACCESS_TOKEN / SLACK_BOT_TOKEN

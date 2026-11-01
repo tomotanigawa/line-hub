@@ -1,0 +1,36 @@
+{
+  "title": "仕事のやること",
+  "icon": "task_alt",
+  "dataPath": "data/shigoto-todo/items",
+  "primaryKey": "id",
+  "fields": {
+    "done": { "type": "toggle", "label": "済", "field": "status", "onValue": "完了", "offValue": "未着手" },
+    "title": { "type": "string", "label": "やること", "required": true },
+    "client": { "type": "string", "label": "取引先" },
+    "kind": { "type": "enum", "label": "種類", "values": ["Todo", "予定"], "default": "Todo", "required": true },
+    "due": { "type": "date", "label": "期限・日付" },
+    "time": { "type": "string", "label": "時間" },
+    "status": {
+      "type": "enum",
+      "label": "状態",
+      "values": ["未着手", "対応中", "先方待ち", "完了", "見送り"],
+      "default": "未着手",
+      "required": true
+    },
+    "priority": { "type": "enum", "label": "優先度", "values": ["高", "中", "低"], "default": "中", "required": true },
+    "source": { "type": "enum", "label": "経路", "values": ["LINE", "Slack", "Gmail", "電話", "その他"] },
+    "place": { "type": "string", "label": "場所" },
+    "link": { "type": "string", "label": "受付スレッド" },
+    "memo": { "type": "markdown", "label": "メモ" },
+    "id": { "type": "string", "label": "ID", "primary": true, "required": true }
+  },
+  "displayField": "title",
+  "calendarField": "due",
+  "calendarTimeField": "time",
+  "kanbanField": "status",
+  "completionField": "status",
+  "completionDoneValues": ["完了", "見送り"],
+  "notifyWhen": { "field": "priority", "in": ["高"] },
+  "triggerField": "due",
+  "triggerLeadDays": 1
+}

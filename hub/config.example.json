@@ -1,0 +1,29 @@
+{
+  "owner": {
+    "slackUserId": "U_MY_ID",
+    "lineName": "LINEでの自分の表示名"
+  },
+  "deskChannel": "C_AIDESK_ID",
+  "quietMinutes": 3,
+  "alertMinutes": 45,
+  "diskAlertGB": 100,
+  "mailCheckTimes": [
+    "09:05",
+    "13:05",
+    "17:05"
+  ],
+  "channels": {
+    "C_INBOX_ID": {
+      "client": "受信箱（電話メモ・手動転送・未登録LINE）",
+      "source": "inbox"
+    },
+    "C_EXAMPLE1": {
+      "client": "A社",
+      "source": "slack"
+    },
+    "C_EXAMPLE2": {
+      "client": "B社",
+      "source": "line"
+    }
+  }
+}
